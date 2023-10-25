@@ -29,7 +29,7 @@ function copyClip(text)
 }
 
 function unsecuredCopyToClipboard(ev) {
-  var text = $(this).find('.artist').replace(/[\W_]+/g," ") + ' ' + $(this).find('.song').replace(/[\W_]+/g," ");
+  var text = $(this).find('.artist').replaceWith(/[\W_]+/g," ") + ' ' + $(this).find('.song').replace(/[\W_]+/g," ");
   text = '!sr ' + text;
   const textArea = document.createElement("textarea");
   textArea.value = text;
