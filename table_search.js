@@ -44,7 +44,7 @@ function unsecuredCopyToClipboard(ev) {
     console.error('Unable to copy to clipboard', err);
   }
   $(this).find('textarea').remove();
-  $(this).find('td:last').html('<span class="clipboard-check-fill"></span>');
+  $(this).find('td:last').html('<i class="clipboard-check-fill" style="color:#ccffcc"></i>');
   $(this).addClass('flash');
   var thisElem = $(this);
   setTimeout(function() {
@@ -66,8 +66,7 @@ function loadCatalog() {
 			newElem.append("<td class='artist'>" + row.colArtist + "</td>");
 			newElem.append("<td class='song'>" + row.colTitle + "</td>");
 			newElem.append("<td>" + row.colArrangements + "</td>");
-			
-			newElem.append('<td class="action"><span class="clipboard"></span></td>');
+			newElem.append('<td class="action"><i class="clipboard"></i></td>');
 			newElem.removeAttr('id');
 			newElem.insertAfter('tbody tr:last');
 		}
