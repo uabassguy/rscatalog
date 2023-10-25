@@ -15,7 +15,7 @@ function table_search(search,tr,indexSearch='0') {
                 }
             }
         }
-        if (result){
+        if (result && i !== 0){
             tr.eq(i).show();
         } else {
             tr.eq(i).hide();
