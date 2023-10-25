@@ -33,7 +33,7 @@ function unsecuredCopyToClipboard(ev) {
   text = '!sr ' + text;
   const textArea = document.createElement("textarea");
   textArea.value = text;
-  $(this).appendChild(textArea);
+  $(this).append(textArea);
   textArea.focus();
   textArea.select();
   try {
@@ -41,7 +41,7 @@ function unsecuredCopyToClipboard(ev) {
   } catch (err) {
     console.error('Unable to copy to clipboard', err);
   }
-  $(this).removeChild(textArea);
+  $(this).find('textarea').remove();
   $(this).find('td:last').html('Copied!');
   ev.preventDefault();
   ev.stopPropagation();
