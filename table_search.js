@@ -29,20 +29,23 @@ function copyClip(text)
 }
 
 function unsecuredCopyToClipboard(ev) {
-  var text = $(this).find('td:nth-child(1)').val().replace(/[\W_]+/g," ") + ' ' + $(this).find('td:nth-child(2)').val().replace(/[\W_]+/g," ");
+  var text = $(this).find('td:nth-child(1)').html().replace(/[\W_]+/g," ") + ' ' + $(this).find('td:nth-child(2)').html().replace(/[\W_]+/g," ");
   text = '!sr ' + text;
   const textArea = document.createElement("textarea");
   textArea.value = text;
   $(this).append(textArea);
   textArea.focus();
   textArea.select();
+  textArea.setSelectionRange(0,9999);
   try {
-    document.execCommand('copy');
+    //document.execCommand('copy');
+    navigator.clipboard.writeText(text);
   } catch (err) {
     console.error('Unable to copy to clipboard', err);
   }
   $(this).find('textarea').remove();
   $(this).find('td:last').html('Copied!');
+  $(this).css('background-color', '#ccffcc');
   ev.preventDefault();
   ev.stopPropagation();
   return false;
