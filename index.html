@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ResidentEmil Rocksmith Catalog</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/lumen/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <style>
+      body { background-color: #fafafa; }
+      .container { margin: 150px auto; }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+  <h1>ResidentEmil's Rocksmith Catalog</h1>
+    <input type="text" id="input" placeholder="Click here to Search" class="form-control">
+    <table id="table" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Song</th>
+                <th>Arrangements</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr id="loading">
+				<td>Loading Data...</td>
+			</tr>
+            <tr class="trow" id="dummy"></tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script src="table_search.js"></script>
+<script>
+
+$('#input').keyup(function () {
+    table_search($('#input').val().toLowerCase(),$('#table tbody tr'),'012');
+});
+
+
+</script>
+
+</html>
