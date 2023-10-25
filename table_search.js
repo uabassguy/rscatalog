@@ -45,7 +45,11 @@ function unsecuredCopyToClipboard(ev) {
   }
   $(this).find('textarea').remove();
   $(this).find('td:last').html('Copied!');
-  $(this).css('background-color', '#ccffcc');
+  $(this).addClass('flash');
+  var thisElem = $(this);
+  setTimeout(function() {
+  	thisElem.removeClass('flash');
+  }, 3000)
   ev.preventDefault();
   ev.stopPropagation();
   return false;
