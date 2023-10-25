@@ -44,7 +44,7 @@ function unsecuredCopyToClipboard(ev) {
     console.error('Unable to copy to clipboard', err);
   }
   $(this).find('textarea').remove();
-  $(this).find('td:last').html('<svg class="bi" width="32" height="32" fill="currentColor"><use xlink:href="bootstrap-icons.svg#clipboard"/></svg>');
+  $(this).find('td:last').html('<svg class="bi" width="32" height="32" fill="#6f6"><use xlink:href="bootstrap-icons.svg#clipboard-check-fill"/></svg>');
   $(this).addClass('flash');
   var thisElem = $(this);
   setTimeout(function() {
