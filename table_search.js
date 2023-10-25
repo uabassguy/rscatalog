@@ -44,7 +44,7 @@ function unsecuredCopyToClipboard(ev) {
     console.error('Unable to copy to clipboard', err);
   }
   $(this).find('textarea').remove();
-  $(this).find('td:last').html('<i class="clipboard-check-fill" style="color:#ccffcc"></i>');
+  $(this).find('td:last').html('<svg class="bi" width="32" height="32" fill="currentColor"><use xlink:href="bootstrap-icons.svg#clipboard"/></svg>');
   $(this).addClass('flash');
   var thisElem = $(this);
   setTimeout(function() {
@@ -66,7 +66,7 @@ function loadCatalog() {
 			newElem.append("<td class='artist'>" + row.colArtist + "</td>");
 			newElem.append("<td class='song'>" + row.colTitle + "</td>");
 			newElem.append("<td>" + row.colArrangements + "</td>");
-			newElem.append('<td class="action"><i class="clipboard"></i></td>');
+			newElem.append('<td class="action"><svg class="bi" width="32" height="32" fill="currentColor"><use xlink:href="bootstrap-icons.svg#clipboard"/></svg></td>');
 			newElem.removeAttr('id');
 			newElem.insertAfter('tbody tr:last');
 		}
